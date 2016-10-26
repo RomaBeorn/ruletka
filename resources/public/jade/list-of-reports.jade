@@ -1,0 +1,31 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Bootstrap 101 Template
+    link(href='css/bootstrap.min.css', rel='stylesheet')
+  body
+    h1 Cryptor Online Bug Reports
+    table.table.table-bordered
+      thead
+        tr
+          th #
+          th Name
+          th Description of bug
+          th Email
+          th Delete bug
+        for bug in bugs
+            tbody
+              tr
+                th(scope='row') #{bug.id}
+                td
+                    b #{bug.name}
+                td #{bug.text}
+                td #{bug.email}
+                td 
+                    a.btn.btn-danger(href='/report/#{bug.id}') Удалить
+      script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+      script(src='js/bootstrap.min.js')
+    a.btn.btn-success(href="/") Вернуться на главную страницу

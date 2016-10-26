@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    title Вход
+  body
+          h3 Рулетка
+            h4 Регистрация
+            form(name='login_form', action='/signup', method='POST')
+              input(name='signup_login', type='text', value='Логин', onblur="if(this.value == '') this.value = 'Логин'", onfocus="if(this.value == 'Логин') this.value = ''",  required=''")
+              input(name='signup_password', type='text', value='Пароль', onblur="if(this.value == '') this.value = 'Пароль'", onfocus="if(this.value == 'Пароль') this.value = ''",  required=''")
+              input(return='form', type='submit', value='Войти', onClick="return check(this.form)")
